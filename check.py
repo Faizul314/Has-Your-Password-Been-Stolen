@@ -33,13 +33,12 @@ def main(args):
     return 'checking complete.'
 
 
-passinputs_extended_list = []
+passinputs_list = []
 file_list = sys.argv[1:]
 for file in file_list:
     with open(file, mode = 'r') as my_file:
-            passinputs = my_file.read()
-            passinputs_list = re.split(' |\n', passinputs)
-            passinputs_extended_list.extend(passinputs_list)
+            passinputs = my_file.read().split()
+            passinputs_list.extend(passinputs)
 
 if __name__ == '__main__':
-    sys.exit(main(passinputs_extended_list))
+    sys.exit(main(passinputs_list))
